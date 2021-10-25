@@ -1,0 +1,24 @@
+.heading {
+  font-weight: 800;
+  font-size: 3.438rem;
+
+  &_xl {
+       font-size: 11.875rem;
+  }
+
+  &_lg {
+        font-size: 5.625rem;
+  }
+
+  &_sm {
+    font-weight: 300;
+    font-size: 2rem;
+  }
+
+  &_xs {
+    font-weight: 700;
+    font-size: 1.75rem;
+  }
+
+}
+

@@ -1,0 +1,30 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  transition: .35s;
+  border: 1px solid transparent;
+  font-family: $main-font;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 22px 43px;
+
+  &:hover,
+  &:focus {
+    border-color: #C73D3D;
+  }
+
+  &_danger {
+    background-color: #C73D3D;
+    &:hover,
+    &:focus {
+       background-color: transparent;
+    }
+  }
+
+}
+

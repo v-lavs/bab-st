@@ -1,0 +1,88 @@
+.section-intro {
+  //min-height: 48.375px;
+  font-weight: 500;
+  line-height: 1.83;
+  //min-height: 774px;
+  .heading{
+    display: inline-flex;
+    flex-direction: column;
+    //margin-bottom: 36px;
+    //padding-right: 50px;
+    padding-right: 3.125rem;
+    font-size: 10vw;
+    margin-bottom: 2.25rem;
+    .surname{
+      margin: 0 auto;
+    }
+  }
+  &__text{
+
+    //max-width: 797px;
+    max-width: 49.813rem;
+    width: 75%;
+    margin-left: auto;
+    text-align: justify;
+    //margin-bottom: 48px;
+    margin-bottom: 3rem;
+    font-size:.95vw;
+      }
+  .wrap-img{
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 152%;
+    height: 127%;
+    overflow: hidden;
+    z-index: 0;
+    img{
+      width: 100%;
+    }
+  }
+  .part-left{
+    position: relative;
+    max-width: 527px;
+    width: 32%;
+    flex-shrink: 0;
+  }
+  .part-right{
+    position: relative;
+    //padding-top: 122px;
+    padding-top: 7.625rem;
+    display: flex;
+    flex-direction: column;
+    width: 68%;
+  }
+  .block-btn{
+    text-align: right;
+  }
+}
+
+.bg-dark {
+  position: relative;
+  //padding: 30px 0 66px;
+  padding: 1.875rem -0px 4.125rem;
+  background:url(../assets/img/ornament-v.png), url(../assets/img/ornament-v.png), #133131 ;
+  background-repeat:no-repeat, no-repeat;
+  background-size: auto 92%;
+  background-position: left -4% bottom, right 6% bottom;
+  color: #ffffff;
+  &:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+    background: linear-gradient(to right , rgba(19,19,19,.9) 0% , rgba(19,19,19,.97) 50%);
+  }
+  .heading{
+    color: #ffffff;
+    line-height: 86.4%;
+    letter-spacing: -0.045em;
+     }
+  .container{
+    position: relative;
+    display: flex;
+  }
+}

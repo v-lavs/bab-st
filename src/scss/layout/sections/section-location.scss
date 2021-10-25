@@ -1,0 +1,27 @@
+.section-location{
+  .wrap-map{
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background: #d7dcdf;
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include respond-to($md){
+    .wrap-map{
+      height: 500px;
+    }
+  }
+  @include respond-to($sm){
+    .wrap-map{
+      height: 450px;
+    }
+  }
+  @include respond-to($xxs){
+    .wrap-map{
+      height: 273px;
+    }
+  }
+}

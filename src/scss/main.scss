@@ -1,0 +1,26 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/animation';
+
+@import 'components/button';
+@import 'components/nav';
+@import 'components/modal';
+@import 'components/form';
+
+@import 'layout/sections/section-intro';
+@import 'layout/sections/section-about';
+@import 'layout/sections/section-franchise';
+@import 'layout/sections/section-partners';
+@import 'layout/sections/section-buy';
+@import 'layout/sections/section-advantages';
+@import 'layout/sections/section-location';
+
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/aside';
+@import 'layout/footer';
+@import 'page/page';

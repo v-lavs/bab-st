@@ -1,0 +1,238 @@
+$anim_time: .95s;
+
+.section-about {
+  padding-top: 120px;
+  padding-bottom: 40px;
+
+  .container {
+    display: flex;
+    background-repeat: no-repeat;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: right -69% bottom;
+  }
+
+  .title {
+    position: relative;
+    line-height: 1.2;
+    margin-bottom: 30px;
+
+    .anim-el {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .anim-el {
+    position: relative;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .decor {
+    position: absolute;
+    display: block;
+    background-color: #f5f5f5;
+    bottom: -1.33em;
+    top: -.48em;
+    width: 5.1em;
+    left: -2.7em;
+    transition: transform $anim_time linear;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    z-index: -1;
+  }
+
+  .scale {
+    animation-delay: .85s;
+  }
+
+  .section__content {
+    width: 60%;
+    padding-top: 100px;
+    padding-right: 10px;
+    padding-bottom: 145px;
+  }
+
+  .section__text {
+    position: relative;
+    z-index: 1;
+    color: #1D3557;
+    font-size: 18px;
+    padding-left: 34px;
+    line-height: 1.75;
+
+    p {
+      margin-bottom: 1.8em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .section__thumb {
+    position: relative;
+    width: 40%;
+    padding-left: 4%;
+    z-index: -1;
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      background-color: #F5E7FF;
+      width: 490px;
+      height: 490px;
+      border-radius: 50%;
+      top: 21%;
+      left: 29%;
+      z-index: -1;
+    }
+  }
+
+  .img-about {
+    height: auto;
+    width: 125%;
+    display: inline-block;
+    max-width: initial;
+  }
+
+  .open-up {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1580px) {
+    .section__thumb {
+      padding-left: 0;
+
+      &:before {
+        left: 18%;
+      }
+
+    }
+    .container {
+      background-position: right -43% bottom;
+    }
+  }
+
+  @include respond-to($xl) {
+    .container {
+      background-position: right -127px bottom;
+    }
+  }
+
+  @include respond-to($lg) {
+    padding-top: 30px;
+    .section__thumb {
+      width: 50%;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        width: 410px;
+        height: 410px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .container {
+      background-size: 80% 100%;
+    }
+  }
+
+  @include respond-to($md) {
+    padding-top: 0;
+    .container {
+      flex-wrap: wrap;
+      background-size: 0;
+      padding-bottom: 50px;
+    }
+    .section__content {
+      width: 100%;
+      padding-bottom: 60px;
+    }
+    .section__thumb {
+      width: 50%;
+      max-width: 410px;
+      margin: 0 auto;
+
+      &:before {
+        width: 290px;
+        height: 290px;
+      }
+
+      .img-about {
+        width: 100%;
+      }
+    }
+    .decor {
+      display: none;
+    }
+  }
+
+  @include respond-to($sm) {
+    .section__thumb {
+      &:before {
+        width: 260px;
+        height: 260px;
+      }
+    }
+  }
+
+  @include respond-to($xs) {
+    .section__content {
+      padding-bottom: 35px;
+    }
+    .decor:before {
+      display: none;
+    }
+    .section__thumb:before {
+      width: 200px;
+      height: 200px;
+    }
+    .section__text {
+      padding-left: 0;
+    }
+    .mob-hide {
+      position: absolute;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+    }
+    .open-up {
+      display: block;
+      position: relative;
+      z-index: 4;
+      font-weight: 700;
+    }
+  }
+
+  @include respond-to($xxs) {
+    .section__content {
+      padding-right: 0;
+    }
+    .section__text {
+      font-size: 14px;
+    }
+    .section__thumb:before {
+      width: 146px;
+      height: 146px;
+    }
+  }
+}
+
+.anim_active {
+  .anim-el {
+    animation: fadeIn linear .3s forwards .6s;
+  }
+
+  .decor {
+    transform: scaleX(1);
+  }
+}
+

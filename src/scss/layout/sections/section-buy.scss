@@ -1,0 +1,238 @@
+$anim_time: .3s;
+
+.section-buy {
+  position: relative;
+  color: $white;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  min-height: 800px;
+  padding-bottom: 115px;
+
+  .section__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scale(1.2);
+    background-size: cover;
+    transition: transform $anim_time linear;
+    transform-origin: 0 50%;
+    z-index: 1;
+  }
+
+  &.open-block {
+    .section__bg {
+      transform: scale(1);
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    top: 0;
+    background-image: linear-gradient(180deg, rgba(29, 53, 87, 0) 43%, rgba(29, 53, 87, 0.9) 100%);
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+  }
+
+  .section__content {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .btn {
+    margin-right: 26px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .title {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: block;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+
+  .info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transform: translateX(100%);
+    width: 45%;
+    padding: 48px 58px 119px 58px;
+    overflow: hidden;
+    background-color: $white;
+    transition: transform $anim_time linear;
+    color: #14213D;
+    z-index: 1000;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    &__header {
+      padding-top: 35px;
+      position: relative;
+      margin-bottom: 80px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        right: -58px;
+        top: 35px;
+        width: calc(100% - 58px);
+        height: 1px;
+        background-color: #14213D;
+      }
+    }
+
+    .btn-close {
+      top: 16px;
+    }
+
+    .dynamic-content {
+      max-width: 465px;
+      width: 100%;
+    }
+
+    .form {
+      .label {
+        width: 100%;
+        max-width: 515px;
+      }
+    }
+  }
+
+  .scroll {
+    max-width: 500px;
+    padding-right: 40px;
+    width: 100%;
+    height: 530px;
+    overflow: auto;
+  }
+
+  .drawer-form {
+    .info__body {
+      height: 100%;
+    }
+
+    .form {
+      padding-bottom: 119px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  @include respond-to($md) {
+    min-height: 500px;
+    background-size: 140%;
+    padding-bottom: 50px;
+    &.open-block {
+      background-size: 130%;
+    }
+    .info {
+      padding: 32px 20px 50px 20px;
+      width: 50%;
+
+      .btn-close {
+        top: 0;
+      }
+
+      .scroll {
+        height: 365px;
+      }
+
+      &__header {
+        padding-top: 0;
+        margin-bottom: 65px;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+    .drawer-form .form {
+      padding-bottom: 62px;
+    }
+    .form__group {
+      padding-top: 5px;
+    }
+    .title {
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  @include respond-to($xs) {
+    padding: 30px 0;
+    min-height: 320px;
+    overflow: visible;
+    .section__bg {
+      transform: scale(1);
+    }
+    .info__body .scroll{
+      height: 75vh;
+    }
+    .drawer {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+    .title {
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .section__content {
+      padding: 0 17px;
+    }
+  }
+
+  @include respond-to($xxs) {
+    .title {
+      &:before {
+        width: 100vw;
+      }
+    }
+    .block-btn {
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.section-partners {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  text-align: center;
+
+  .title {
+    margin-bottom: 120px;
+  }
+
+  .partners-name {
+    font-weight: 700;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity .8s;
+  }
+
+  .partners-list {
+    display: flex;
+    justify-content: space-between;
+
+    &__img {
+      opacity: .52;
+      transition: opacity .5s;
+    }
+
+    &__item {
+      width: 20%;
+      text-align: center;
+      padding: 10px;
+    }
+
+    &__link {
+      display: block;
+
+      &:hover,
+      &:focus {
+        .partners-list__img,
+        .partners-name {
+          opacity: 1;
+        }
+      }
+    }
+
+    .wrap-img {
+      margin: 0 auto 20px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+  @include respond-to($xl){
+    .title {
+      margin-bottom: 100px;
+    }
+  }
+
+  @include respond-to($md) {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    .title {
+      margin-bottom: 80px;
+    }
+    .partners-name {
+      font-size: 20px;
+    }
+  }
+  @include respond-to($sm) {
+    .partners-name {
+      display: none;
+    }
+    .title {
+      margin-bottom: 40px;
+      font-size: 22px;
+    }
+    .partners-list .wrap-img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+  @include respond-to($xs) {
+    padding-top: 45px;
+    padding-bottom: 52px;
+
+    .partners-list .wrap-img {
+      width: 36px;
+      height: 38px;
+      margin-bottom: 0;
+    }
+  }
+  @include respond-to($xxs) {
+    padding-bottom: 48px;
+    .title {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .partners-list__item {
+      padding: 5px;
+      width: 17%;
+    }
+  }
+}
